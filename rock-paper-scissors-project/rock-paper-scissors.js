@@ -7,6 +7,29 @@ const score = JSON.parse(localStorage.getItem('score')) ||
 
 updateScoreElement();
 
+let isAutoPlaying = false;
+let intervailId;
+
+function autoPlay() {
+    if(!isAutoPlaying) {
+        intervailId = setInterval(() => {
+            const playerMove = pickComputerMove();
+            playGame(playerMove);
+        }, 1000);
+        isAutoPlaying = true;
+
+    } else {
+        clearInterval(intervailId);
+        isAutoPlaying = false;
+    }
+    
+}
+
+document.querySelector('.js-rock-button')
+    .addEventListener('click', () => {
+        playGame('rock');
+    })
+
 
 function playGame(playerMove) {
     const computerMove = pickComputerMove();
