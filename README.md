@@ -129,6 +129,7 @@ then in side the script :
   button.addEventListener('click', () => {
       button.dataset.productName;//prouduct-name => productName//
       //it will only show the product name 
+      //dataset basically give us all the data attributes that are attached to this button
   })
 
 
