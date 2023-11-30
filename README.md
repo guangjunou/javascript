@@ -115,8 +115,21 @@ document.body.addEventListener('keydown', (event) =>{
 
 
 
+//for amazon product
 
+data attribute
+just an HTML attribute
+start with 'data-'
+then give it any name 
 
+suhc as 
+<button data-product-name = "${product.name}"></button>
+
+then in side the script :
+  button.addEventListener('click', () => {
+      button.dataset.productName;//prouduct-name => productName//
+      //it will only show the product name 
+  })
 
 
 
